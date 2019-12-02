@@ -1,6 +1,6 @@
-const Board = require("./Board.js")
-const HumanPlayer = require("./HumanPlayer.js")
-const ComputerPlayer =  require("./ComputerPlayer.js")
+const Board = require("./board.js")
+const HumanPlayer = require("./humanPlayer.js")
+const ComputerPlayer =  require("./computerPlayer.js")
 // const {hangManPics} = require("./hangmanPics.js")
 
 class Game {
@@ -10,6 +10,12 @@ class Game {
         this.guessesRemaining = 6; 
         this.guessedLetters = [];
     }
+    
+    gameStart() {
+        let boardLength = this.ref.chooseSecretWord()
+        this.board = new Board(boardLength);
+    }
+
     play() {
         let boardLength = this.ref.chooseSecretWord()
         this.board = new Board(boardLength);
@@ -53,10 +59,6 @@ class Game {
     }
 }
 
-let human = new HumanPlayer("corey")
-let robo = new ComputerPlayer();
-let game = new Game({ref: human, guesser: robo})
-game.play();
 
 
 export default Game;
