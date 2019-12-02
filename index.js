@@ -14,6 +14,7 @@ let game = new Game({ref: robo, guesser: human})
 
 new View(el,game)
 
+
    
     
     

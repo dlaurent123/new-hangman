@@ -1,7 +1,7 @@
 const Board = require("./board.js")
 const HumanPlayer = require("./humanPlayer.js")
 const ComputerPlayer =  require("./computerPlayer.js")
-// const {hangManPics} = require("./hangmanPics.js")
+const {hangManPics} = require("./hangmanPics.js")
 
 class Game {
     constructor(players) {
